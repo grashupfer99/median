@@ -6,19 +6,14 @@ const example4 = [3, 6, 20, 99, 10, 15];
 function getMedian(data) {
   const sortedArr = data.sort((a, b) => a - b);
   const length = sortedArr.length;
-  let median;
 
   // odd
   if (isOdd(length)) {
-    median = sortedArr[Math.floor((sortedArr.length - 1) / 2)];
-    return median;
+    return sortedArr[Math.floor((sortedArr.length - 1) / 2)];
   }
 
   // even
-  const mid = sortedArr.slice(((length - 1) / 2), ((length - 1) / 2) + 2);
-  const sum = mid.reduce((val, acc) => val + acc, 0) / 2;
-  median = sum;
-  return median;
+  return sortedArr.slice(((length - 1) / 2), ((length - 1) / 2) + 2).reduce((val, acc) => val + acc, 0) / 2;
 
 }
 
